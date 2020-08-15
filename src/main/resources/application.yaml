@@ -1,0 +1,5 @@
+spring:
+  liquibase:
+    change-log: classpath:liquibase-changeLog.xml
+  datasource:
+    driverClassName: org.h2.Driver
