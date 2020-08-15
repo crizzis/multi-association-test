@@ -32,10 +32,9 @@ class TagTest {
         //given
         Post existingPost = entityManager.find(Post.class, "post-1");
         Tag existingTag = entityManager.find(Tag.class, 1L);
-        Tag newTag = Tag.builder()
+        Tag newTag = PostTag.builder()
                 .id(3L)
-                .resourceId(existingPost.getId())
-                .resourceType("post")
+                .post(existingPost)
                 .tag("some other tag")
                 .build();
 

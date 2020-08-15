@@ -19,9 +19,6 @@ public class Story {
     @Id
     private String id;
 
-    @OneToMany
-    @Immutable
-    @JoinColumn(name = "resource_id", referencedColumnName = "id", insertable = false, updatable = false)
-    @Where(clause = "resource_type = 'story'")
-    private Collection<Tag> tags;
+    @OneToMany(mappedBy = "story")
+    private Collection<StoryTag> tags;
 }
